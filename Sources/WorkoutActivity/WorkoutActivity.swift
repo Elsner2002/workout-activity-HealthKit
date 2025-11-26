@@ -12,14 +12,14 @@
 ///
 /// - Conforms to `CaseIterable` to iterate over all cases (e.g., for pickers).
 /// - Conforms to `Codable` for persistence and serialization.
-enum WorkoutActivityType: CaseIterable, Codable {
+public enum WorkoutActivityType: CaseIterable, Codable {
     case americanFootball, archery, australianFootball, badminton, baseball, basketball, bowling, boxing, climbing, crossTraining, curling, cycling, elliptical, equestrianSports, fencing, fishing, functionalStrengthTraining, golf, gymnastics, handball, hiking, hockey, hunting, lacrosse, martialArts, mindAndBody, paddleSports, play, preparationAndRecovery, racquetball, rowing, rugby, running, sailing, skatingSports, snowSports, soccer, softball, squash, stairClimbing, surfingSports, swimming, tableTennis, tennis, trackAndField, traditionalStrengthTraining, volleyball, walking, waterFitness, waterPolo, waterSports, wrestling, yoga, barre, coreTraining, crossCountrySkiing, downhillSkiing, flexibility, highIntensityIntervalTraining, jumpRope, kickboxing, pilates, snowboarding, stairs, stepTraining, wheelchairWalkPace, wheelchairRunPace, taiChi, mixedCardio, handCycling, discSports, fitnessGaming, other
     // Each case corresponds to a HealthKit `HKWorkoutActivityType` where available.
     
     /// A human-readable display name for the workout activity.
     ///
     /// This value is intended for UI labels and localization-ready display.
-    var name: String {
+    public var name: String {
         switch self {
         case .americanFootball:                 return "American Football"
         case .archery:                          return "Archery"
@@ -102,7 +102,7 @@ enum WorkoutActivityType: CaseIterable, Codable {
     /// - Note: Requires iOS 16+ as it uses newer figure symbols.
     /// - Returns: The symbol name (e.g., `figure.run`).
     @available(iOS 16.0, *)
-    var icon: String {
+    public var icon: String {
         switch self {
         case .functionalStrengthTraining:       return "figure.strengthtraining.functional"
         case .traditionalStrengthTraining:      return "figure.strengthtraining.traditional"
@@ -140,14 +140,14 @@ import HealthKit
 // MARK: - HealthKit Mapping
 
 /// HealthKit interoperability helpers for `WorkoutActivityType`.
-extension WorkoutActivityType {
+public extension WorkoutActivityType {
     
     /// Maps this `WorkoutActivityType` to the corresponding `HKWorkoutActivityType`.
     ///
     /// - Returns: The matching HealthKit workout activity type.
     /// - Availability: iOS 13+.
     @available(iOS 13.0, *)
-    var workoutType: HKWorkoutActivityType {
+    public var workoutType: HKWorkoutActivityType {
         switch self {
         case .americanFootball:                 return HKWorkoutActivityType.americanFootball
         case .archery:                          return HKWorkoutActivityType.archery
@@ -229,7 +229,7 @@ extension WorkoutActivityType {
     ///
     /// - Parameter hkType: The HealthKit workout type to convert from.
     /// - Returns: The corresponding `WorkoutActivityType`, or `.other` for unknown future cases.
-    static func from(hkType: HKWorkoutActivityType) -> WorkoutActivityType {
+    public static func from(hkType: HKWorkoutActivityType) -> WorkoutActivityType {
         switch hkType {
         case .americanFootball:                 return .americanFootball
         case .archery:                          return .archery

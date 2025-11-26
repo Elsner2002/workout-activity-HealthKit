@@ -71,6 +71,7 @@ Contributions are welcome!
 If you’d like to add support for more icon mappings, improve naming, or extend utilities, feel free to open a pull request.
 
 Typical workflow:
+
 	1.	Clone the repository
 	2.	Open the project in Xcode
 	3.	Implement your changes

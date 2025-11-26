@@ -27,11 +27,11 @@ WorkoutActivity supports the Swift Package Manager.
 To install WorkoutActivity using Swift Package Manager:
 1. In Xcode, select “File” → “Add Packages...”
 2. Enter the URL for this repository:
-https://github.com/Elsner2002/WorkoutActivity.git
+https://github.com/Elsner2002/workout-activity-HealthKit.git
 
   Or add it to your Package.swift:
 
-  .package(url: "https://github.com/Elsner2002/WorkoutActivity.git", from: "1.0.0")
+  .package(url: "https://github.com/Elsner2002/workout-activity-HealthKit.git", from: "1.0.0")
   Then import the module:
     import WorkoutActivity
 
